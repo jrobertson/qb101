@@ -9,6 +9,7 @@
 
 require 'yatoc'
 require 'polyrex-headings'
+require 'kramdown'
 
 
 # This file contains 2 classes, the question book class and 
@@ -84,11 +85,15 @@ class Ab101
 
   # note: the ab_xml file can be in CGRecorder log XML format
   
-  def initialize(qb_txt, ab_xml=nil, filepath: '.', debug: false)
+  def initialize(qb, ab_xml=nil, filepath: '.', debug: false)
     
     @debug = debug
     
-    @qb = Qb101.new(qb_txt)
+    @qb = if qb.is_a?(String) and qb.lines.length < 2 then
+      Qb101.new(qb)
+    elsif qb.kind_of?(Qb101)
+      qb
+    end
     
     @dx = Dynarex.new('book[title, tags]/item(question, answer)')
     @dx.title = @qb.title
@@ -153,9 +158,21 @@ class Ab101
     puts 'answers: ' + answers.inspect if @debug
     
     doc.root.xpath('//p').each.with_index do |para, i|
+
+
+      s = answers[i].strip
       
-      e = Rexle::Element.new('p', attributes: {class: 'answer'})\
-          .add_text answers[i]
+      e = if s.lines.length > 1 then
+      
+        html = "<span>%s</span>" % Kramdown::Document.new(s).to_html      
+        Rexle.new(html).root
+        
+      else
+        
+        Rexle::Element.new('p', attributes: {class: 'answer'})\
+            .add_text s
+        
+      end
       para.insert_after e
       
     end
@@ -168,4 +185,3 @@ class Ab101
   end
 
 end
-
