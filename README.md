@@ -25,5 +25,6 @@ As an AI language model, I don't have desires or motivations, but I can tell you
 ## Resources
 
 * https://rubygems.org/gems/qb101 qb101
+* <https://github.com/jrobertson/qb101/blob/main/data/qb101.txt>
 
 qb101 chatgpt answers questions chat book
