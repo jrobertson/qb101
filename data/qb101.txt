@@ -1,0 +1,52 @@
+<?ph schema="book[title,tags]/section[x]"?>
+
+title: A Sample Questions File
+tags: education learning book questions answers chatgpt
+
+# Questions 
+
+Why ask questions?
+
+## Generating a ChatGPT TOC
+
+Write a table of contents for learning ChatGPT
+
+## Introduction 
+
+Give me an overview of ChatGPT
+What are the benefits of using ChatGPT?
+
+## Getting Started with ChatGPT
+
+What are the essentials of ChatGPT?
+How do I set up an account and get started with ChatGPT?
+
+## Basic Functions of ChatGPT 
+
+How can I properly engage with ChatGPT?
+Give me an understanding of the importance of good communication with ChatGPT AI
+
+## Advanced Functions of ChatGPT 
+
+How can I create a custom model?
+How can I train a new model with ChatGPT?
+
+## Applications of ChatGPT 
+
+What are the use cases for ChatGPT?
+How can I incorporate ChatGPT into my organization?
+
+## Tips for getting the best results with ChatGPT
+
+How do I prepare my data for ChatGPT?
+What tricks are there for better model building and AI understanding?
+
+## Best practices for maintaining ChatGPT
+
+How can I maintain and update my ChatGPT model 
+Give me tips for keeping my data safe and up-to-date 
+
+## Conclusion 
+
+Give me a recap of ChatGPT 
+What is the future of ChatGPT and AI?
